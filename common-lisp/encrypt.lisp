@@ -30,12 +30,14 @@
     (car block)
     (cdr block)))
 
-;read len do 字符串拼接 format
-
-(format t "~A~%" 2)
+;read len do 字符串拼接 format 函数调用
+;let setf 递归 dolist
+(format t "~A~%" 10)
 
 (defun enter (start end)
   (do ((i start (+ i 1)))
       ((> i end) 'done)
     (format t "~A~%" 2)
     (read)))
+
+(format "~A~%" (setf x 11)
