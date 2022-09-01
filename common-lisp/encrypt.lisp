@@ -30,4 +30,12 @@
     (car block)
     (cdr block)))
 
-read len do 字符串拼接 format
+;read len do 字符串拼接 format
+
+(format t "~A~%" 2)
+
+(defun enter (start end)
+  (do ((i start (+ i 1)))
+      ((> i end) 'done)
+    (format t "~A~%" 2)
+    (read)))
