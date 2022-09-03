@@ -31,7 +31,7 @@
     (cdr block)))
 
 ;read len do 字符串拼接 format 函数调用
-;let setf 递归 dolist
+;let setf 递归 dolist and or
 (format t "~A~%" 10)
 
 (defun enter (start end)
@@ -40,6 +40,6 @@
     (format t "~A~%" 2)
     (read)))
 
-(format "~A~%" (setf x 11)
+(format t "~A~%" (setf x 11))
 
-
+(format t "~A~%" (and 1 2))
