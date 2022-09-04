@@ -10,3 +10,9 @@
 (format t "~A~%" x)
 
 ;let 和setf 有什么区别？
+
+(format t "~A~%" 6) 
+
+(format t "~A~%" (lambda (x) (list x 'h)))
+
+(format t "~A~%" (list x 'h nil))

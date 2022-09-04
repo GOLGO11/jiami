@@ -3,6 +3,7 @@
 ;  (format t "~A~%" i)
 
 (defun show-squares (start end)
+  "测试一下这段字"
   (do ((i start (+ i 1)))
     ((> i end) 'done)
     (format t "~A ~A~%" i (* i i))))

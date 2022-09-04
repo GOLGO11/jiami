@@ -1,4 +1,3 @@
-# -*- coding:utf-8 -*-
 # 加密
 
 def undertale(block):
@@ -131,19 +130,15 @@ def encrypt_2(cyphertext_1):
         return cyphertext_2    
 
 
-if __name__ == "__main__":
+# 接受一个待编码的字符串
+plaintext = input("请输入待加密的明文：\n")
 
-    # 接受一个待编码的字符串
-    plaintext = input("请输入待加密的明文：\n")
+# 第一层加密
+cyphertext_1 = encrypt_1(plaintext)
 
-    # 第一层加密
-    cyphertext_1 = encrypt_1(plaintext)
+# 第二层加密
+cyphertext_2 = encrypt_2(cyphertext_1)
 
-    # 第二层加密
-    cyphertext_2 = encrypt_2(cyphertext_1)
-
-    # 输出
-    print("\n")
-    print("生成的密文如下：")
-    print(cyphertext_2)
-    
+# 输出
+print("\n生成的密文如下：")
+print(cyphertext_2)
