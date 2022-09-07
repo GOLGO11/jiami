@@ -125,7 +125,7 @@ def encrypt_2(cyphertext_1):
     if remain != 0:
         for i in range(num-1):
             block = cyphertext_1[2*i:2*(i+1)]
-            cyphertext_2 = cyphertext_2 +swap(block)
+            cyphertext_2 = cyphertext_2 + swap(block)
         cyphertext_2 = cyphertext_2 + cyphertext_1[-1] 
         return cyphertext_2    
 
