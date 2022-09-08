@@ -61,7 +61,7 @@
 
 (defun encrypt-1 (plaintext)
   (setf cyphertext-1 '')
-  (setf remain (integer (mod (length plaintext) 6)))
+  (setf remain (mod (length plaintext) 6))
   (if (= remain 0)
     (setf num (integer (/ (length plaintext) 6)))
     (setf num (integer (+ 1 (/ (length plaintext) 6)))))
@@ -83,7 +83,7 @@
 
 (defun encrypt-2 (cyphertext-1)
   (setf cyphertext "")
-  (setf remain (integer (mod (length cyphertext-1) 2)))
+  (setf remain (mod (length cyphertext-1) 2))
   (if (= remain 0)
     (do ((i num (+ i 1)))
       (> i num 'done)
