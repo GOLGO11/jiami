@@ -12,7 +12,7 @@
   (setf (arr 4) (b 3))
   (setf (arr 5) (b 0))
   (setf b arr)
-  (return-from b)
+  (return b)
 
 
   (if (= (length b) 5)
@@ -24,7 +24,7 @@
   (setf (arr 3) (b 3))
   (setf (arr 4) (b 0))
   (setf b arr)
-  (return-from b)
+  (return b)
 
   (if (= (length b) 4)
     (setf arr (make-array '4)))
@@ -34,7 +34,7 @@
   (setf (arr 2) (b 3))
   (setf (arr 3) (b 0))
   (setf b arr)
-  (return-from b)
+  (return b)
 
   (if (= (length b) 3)
     (setf arr (make-array '3)))
@@ -43,7 +43,7 @@
   (setf (arr 1) (b 1))
   (setf (arr 2) (b 0))
   (setf b arr)
-  (return-from b)
+  (return b)
 
   (if (= (length b) 2)
     (setf arr (make-array '2)))
@@ -51,12 +51,12 @@
   (setf (arr 0) (b 1))
   (setf (arr 1) (b 0))
   (setf b arr)
-  (return-from b)
+  (return b)
 
   (if (= (length b) 1)
     (setf arr (make-array '1)))
 
-  (return-from b))
+  (return b))
 
 
 (defun swap (b)
@@ -65,7 +65,7 @@
   (setf (arr 0) (b 1))
   (setf (arr 1) (b 0))
   (setf b arr)
-  (return-from b))
+  (return b))
 
 
 (defun encrypt-1 (plaintext)
@@ -80,7 +80,7 @@
       (> i num 'done)
       (setf b (plaintext (* 6 i) (* 6 (+ i 1))))
       (setf cyphertext-1 (concatenate  cyphertext (undertale b)))
-    (return-from cyphertext-1)))
+    (return cyphertext-1)))
 
   (if (!= remain 0)
     (do ((i (- num 1) (+ i 1)))
@@ -89,7 +89,7 @@
       (setf cyphertext-1 (concatenate cyphertext-1 (undertale b)))
       (setf b (plaintext (- (length plaintext) remain)))
       (setf cyphertext-1 (+ cyphertext-1 (undertale b)))
-    (return-from cyphertext-1))))
+    (return cyphertext-1))))
 
 
 (defun encrypt-2 (cyphertext-1)
@@ -100,7 +100,7 @@
       (> i num 'done)
       (setf b (cyphertext-1 (* 2 i) (* 2 (+ i 1))))
       (setf cyphertext-2 (concatenate cyphertext-2 (swap b)))
-    (return-from cyphertext-2)))
+    (return cyphertext-2))
 
   (if (!= remain 0)
     (do ((i (- num 1) (+ i 1)))
@@ -108,7 +108,7 @@
       (setf b (cyphertext-1 (* 2 i) (* 2 (+ i 1))))
       (setf cyphertext-2 (concatenate cyphertext-2 (swap b)))
     (setf cyphertext-2 (concatenate cyphertext-2 cyphertext-1 -1))
-    (return-from cyphertext-2)))
+    (return cyphertext-2))))
   
 
 (read plaintext)

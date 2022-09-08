@@ -1,7 +1,7 @@
 (defun z (x y)
   (do ((i x (+ i 1)))
       ((> i y) 'done)
-    (format t "请勿打扰，请勿打扰，请勿打扰，请勿打扰，请勿打扰，请勿打扰，请勿打扰，请勿打扰，请勿打扰，请勿打扰，请勿打扰, 请勿打扰，请勿打扰，请勿打扰，请勿打扰，请勿打扰，请勿打扰~%")))
+    (format t "请勿打扰，请勿打扰，请勿打扰，请勿打扰，请勿打扰，请勿打扰，请勿打扰，请勿打扰，请勿打扰，请勿打扰，请勿打扰, 请勿打扰，请勿打扰，请勿打扰，请勿打扰，请勿打扰，请勿打扰, 请勿打扰，请勿打扰~%")))
 
 ;(z 10 200000000000000000000000000000000000000000000000000000000000000000000000000000)
 
@@ -14,4 +14,15 @@
 
 ;(setf arr (make-array '10))
 
-(format t (concatenate 'string "Hello " "world!~%") )
+;(format t (concatenate 'string "Hello " "world!~%") )
+
+(defun z (x)
+  (reverse x)) 
+
+(format t (z "这是一串回文"))
+(format t "~%")
+
+(format t "一辆火车驶过~%")
+
+(print (intern "AAAA"))
+(print (intern "aaa"))
