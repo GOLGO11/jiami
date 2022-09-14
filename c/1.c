@@ -1,3 +1,6 @@
+#include <stdio.h>
+
+
 double average(double a, double b)
 {
 	return (a + b) / 2;
@@ -5,6 +8,6 @@ double average(double a, double b)
 
 int main () 
 {
-	average(10, 20);
+	printf("%f\n", average(10, 20));
 	return 0;
 }
