@@ -5,10 +5,10 @@
 
 /* 函数声明 */
 
-string undertale(block[]);
-string swap(block[]);
-string encrypt_1(plaintext[]);
-string encrypt_2(cyphertext_1[]);
+char undertale(char block[]);
+char swap(char block[]);
+char encrypt_1(char plaintext[]);
+char encrypt_2(char cyphertext_1[]);
 
 void main()
 {
@@ -21,11 +21,11 @@ void main()
 	printf("%s", cyphertext_2);	
 }
 
-string undertale(block[])
+char undertale(char block[])
 {
-	if strlen(block) == 6
+	if (strlen(block) == 6)
 	{
-		temp = ['', '', '', '', '', ''];
+		char temp[6];
 		temp[0] = block[2];	
 		temp[1] = block[4];
 		temp[2] = block[1];
@@ -36,9 +36,9 @@ string undertale(block[])
 		return block;
 	}
 
-	if strlen(block) == 5
+	if (strlen(block) == 5)
 	{
-		temp = ['', '', '', '', ''];
+		char temp[5];
 		temp[0] = block[2];
 		temp[1] = block[4];
 		temp[2] = block[1];
@@ -48,9 +48,9 @@ string undertale(block[])
 		return block;
 	}
 
-	if strlen(block) == 4
+	if (strlen(block) == 4)
 	{
-		temp = ['', '', '', ''];	
+		char temp[4];
 		temp[0] = block[2];
 		temp[1] = block[1];
 		temp[2] = block[3];
@@ -59,9 +59,9 @@ string undertale(block[])
 		return block;
 	}
 
-	if strlen(block) == 3
+	if (strlen(block) == 3)
 	{
-		temp = ['', '', '', ''];
+		char temp[3];
 		temp[0] = block[2];
 		temp[1] = block[1];
 		temp[2] = block[0];
@@ -69,46 +69,46 @@ string undertale(block[])
 		return block;
 	}
 
-	if strlen(block) == 2
+	if (strlen(block) == 2)
 	{
-		temp = ['', ''];
+		char temp[2];
 		temp[0] = block[1];
 		temp[1] = block[0];
 		block = temp;
 		return block;
 	}
 
-	if strlen(block) == 1
+	if (strlen(block) == 1)
 	{
 		return block;
 	}
 }
 
-string swap(block[])
+char swap(char block[])
 {
-	temp = ['', ''];
+	char temp[2];
 	temp[0] = block[1];
 	temp[1] = block[0];
 	block = temp;
 	return block;
 }
 
-string encrypt_1(plaintext[])
+char encrypt_1(char plaintext[])
 {
-	char cyphertext = '';
+	char cyphertext;
 	int remain, num, i;
 
 	remain = (strlen(plaintext)) % 6;
-	if remain == 0
+	if (remain == 0)
 	{
 		num = (strlen(plaintext)) / 6;
 	}
-	if remain != 0
+	if (remain != 0)
 	{
 		num = (strlen(plaintext)) / 6 + 1;
 	}
 	
-	if remain == 0
+	if (remain == 0)
 	{
 		for(i = 1; i <= num; i++)
 		{
@@ -117,7 +117,7 @@ string encrypt_1(plaintext[])
 			return cyphertext_1;
 		}
 	}
-	if remain != 0
+	if (remain != 0)
 	{
 		for(i = 1; i <= (num-1); i++)
 		{
@@ -129,23 +129,23 @@ string encrypt_1(plaintext[])
 	return cyphertext_1;	
 }
 
-string encrypt_2(cyphertext_1[])
+char encrypt_2(char cyphertext_1[])
 {
-	char cyphertext_2 = '';
+	char cyphertext_2;
 	int remain, num, i;
 	
 	remain = (strlen(cyohertext_1)) % 2;
 
-	if remain == 0
+	if (remain == 0)
 	{
 		num = (strlen(cyphertext_1)) / 2;
 	}
-	if remain != 0
+	if (remain != 0)
 	{
 		num = (strlen(cyphertext_1)) / 2 + 1;
 	}
 
-	if remain == 0
+	if (remain == 0)
 	{
 		for(i=1; i<=num; i++)
 		{
@@ -154,7 +154,7 @@ string encrypt_2(cyphertext_1[])
 		}
 		return cyphertext_2;
 	}
-	if remain != 0
+	if (remain != 0)
 	{
 		for(i=1;i<=(num-1);i++)
 		{
